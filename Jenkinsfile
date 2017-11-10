@@ -1,6 +1,9 @@
 node 
-{    ansiblePlaybook( 
-        playbook: '/var/lib/jenkins/workspace/pip1/site.yml',
-        inventory: '/var/lib/jenkins/workspace/pip1/hosts', 
+{   ws {
+        /var/lib/jenkins/workspace/my-app
+     }
+        ansiblePlaybook( 
+        playbook: 'site.yml',
+        inventory: 'hosts', 
         credentialsId: '~/.ssh/id_rsa')
 }
